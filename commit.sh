@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo -n "请输入提交信息:>"
 read msg
 git add *
