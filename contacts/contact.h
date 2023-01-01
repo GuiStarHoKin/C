@@ -48,3 +48,9 @@ void ShowContact(const struct Contact *ps);
 
 //删除指定的联系人
 void DelContact(struct Contact *ps);
+
+//查找指定人的信息
+void SearchContact(const struct Contact *ps);
+
+//修改指定联系人
+void ModifyContact(struct Contact *ps);
