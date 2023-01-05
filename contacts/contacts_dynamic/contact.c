@@ -12,7 +12,7 @@ void InitContact(struct Contact *ps)
   ps->size = 0;
 }
 
-void CheckCapacity(struct Contact *ps)
+static void CheckCapacity(struct Contact *ps)
 {
   if (ps->size == ps->capacity) // 容量不足
   {
