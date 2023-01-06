@@ -1,0 +1,10 @@
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=0
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=1
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=2
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=3
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=4
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=5
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=6
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=7
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=8
+File:/home/hokin/Project/C/day/2023_1/06/predefined_symbol.c date:Jan  6 2023 time:10:37:11 line:17 function:main i=9
