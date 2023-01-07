@@ -2,6 +2,9 @@
 
 void InitContact(Contact *ps)
 {
+  // #define MALLOC(num, type) (type*)malloc(num*sizeof(type))
+  // ps->date = MALLOC(DEFAULT_SZ, PeoInfo);
+  // 妙
   ps->date = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
   if (ps->date == NULL)
   {
