@@ -1,3 +1,5 @@
+#pragma once 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,12 +39,12 @@ typedef struct Contact
   int capacity;
 }Contact;
 
-void InitContact(Contact *ps);
-void AddContact(Contact *ps);
-void ShowContact(const Contact *ps);
-void DelContact(Contact *ps);
-void SearchContact(const Contact *ps);
-void ModifyContact(Contact *ps);
-void DestroyContact(Contact *ps);
-void SaveContact(const Contact *ps);
-void LoadContact(Contact *ps);
+extern void InitContact(Contact *ps);
+extern void AddContact(Contact *ps);
+extern void ShowContact(const Contact *ps);
+extern void DelContact(Contact *ps);
+extern void SearchContact(const Contact *ps);
+extern void ModifyContact(Contact *ps);
+extern void DestroyContact(Contact *ps);
+extern void SaveContact(const Contact *ps);
+extern void LoadContact(Contact *ps);
