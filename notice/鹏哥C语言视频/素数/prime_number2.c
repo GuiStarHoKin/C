@@ -14,12 +14,6 @@ int is_prime(int n)
         }
     }
     return 1;
-    /*
-    if(j == n) // 一定要是j==n，j>n根本不可能，因为上面是j<n
-    {
-        return 1;
-    } 
-    */
 
     /*int j;
     for(j = 2;j <= sqrt(n);j++)
@@ -29,10 +23,8 @@ int is_prime(int n)
             return 0;
         }
     }
-    if(j > sqrt(n))
-    {
-        return 1;
-    }*/
+    return 1;
+    */
 }
 
 int main()
