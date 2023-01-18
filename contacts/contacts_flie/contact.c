@@ -9,7 +9,7 @@ void InitContact(Contact *ps)
   if (ps->date == NULL)
   {
     printf("%s\n", strerror(errno));
-  }
+  }// end "if(ps->date == NULL)"
   ps->capacity = DEFAULT_SZ;
   ps->size = 0;
   // 把文件中已经存放的通讯录中的信息加载到通讯录中
@@ -54,8 +54,8 @@ static void CheckCapacity(Contact *ps)
     else
     {
       printf("增容失败!\n");
-    }
-  }
+    }// end "if (ptr != NULL)"
+  }// end "if(ps->size == ps->capacity)"
 }
 
 void AddContact(Contact *ps)
@@ -99,8 +99,8 @@ void ShowContact(const Contact *ps)
         ps->date[i].age,
         ps->date[i].tele,
         ps->date[i].addr);
-    }
-  }
+    }// end "for(i=0; i<ps->size; i++)"
+  }// end "if(ps->size == 0)"
 }
 
 static int FindByName(const Contact *ps, const char name[MAX_NAME])
