@@ -2,6 +2,8 @@
 	.text
 	.section	.rodata
 .LC0:
+	.string	"%ld\n"
+.LC1:
 	.string	"%d\n"
 	.text
 	.globl	main
@@ -17,9 +19,14 @@ main:
 	.cfi_def_cfa_register 6
 	subq	$16, %rsp
 	movl	$1, -4(%rbp)
+	movl	$4, %esi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
 	movl	-4(%rbp), %eax
 	movl	%eax, %esi
-	leaq	.LC0(%rip), %rax
+	leaq	.LC1(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
