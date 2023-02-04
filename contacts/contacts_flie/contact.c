@@ -5,11 +5,14 @@ void InitContact(Contact *ps)
   // #define MALLOC(num, type) (type*)malloc(num*sizeof(type))
   // ps->date = MALLOC(DEFAULT_SZ, PeoInfo);
   // 妙
+
   ps->date = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
   if (ps->date == NULL)
   {
-    printf("%s\n", strerror(errno));
+    //printf("%s\n", strerror(errno));
+    perror("InitContact()");
   }// end "if(ps->date == NULL)"
+  memset(ps->date, 0, sizeof(PeoInfo)*DEFAULT_SZ); // 全部初始化为0
   ps->capacity = DEFAULT_SZ;
   ps->size = 0;
   // 把文件中已经存放的通讯录中的信息加载到通讯录中
