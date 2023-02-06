@@ -28,8 +28,8 @@ void InsertNode(Node_t *head, int x)
 {
   assert(head != NULL);
   Node_t *node = AllocNode(x);
-  node->next = head->next;
-  head->next = node;
+  node->next = head->next; // 头结点本来的指针给新的结点
+  head->next = node; //新的结点的指针给头结点
 }
 
 void ShowList(Node_t *head)
@@ -48,7 +48,7 @@ void DeleteNode(Node_t *head)
 {
   assert(head != NULL);
   Node_t *p = head->next;
-  head->next = p->next;
+  head->next = p->next; //头结点直接与需要的结点建立关系
   free(p);
   p = NULL;
 }

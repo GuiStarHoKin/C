@@ -14,9 +14,9 @@ typedef struct Node
 Node_t* AllocNode(int x)
 {
   Node_t *node = (Node_t*)malloc(sizeof(Node_t));
-  if (node == NULL)
+  if (NULL == node)
   {
-    perror("malloc");
+    perror("AllocNode(int x)");
   }
   node->data = x;
   node->next = NULL;
@@ -26,18 +26,18 @@ Node_t* AllocNode(int x)
 void InsertNode(int x, Node_t* head)
 {
   assert(head != NULL);
-  Node_t *node = AllocNode(x);
+  Node_t* node = AllocNode(x);
   node->next = head->next;
   head->next = node;
 }
 
-void ShowNode(Node_t *head)
+void ShowNode(Node_t* head)
 {
   assert(head != NULL);
   Node_t *p = head->next;
   while(p)
   {
-    printf("%d->", p->data);
+    printf("%d->",p->data);
     p = p->next;
   }
   printf("NULL\n");
@@ -55,15 +55,15 @@ void DeleteNode(Node_t *head)
 int main()
 {
   int i = 1;
-  Node_t * head = AllocNode(0);
-  printf("插入结点...\n");
+  Node_t *head = AllocNode(0);
+  printf("插入测试...\n");
   for (i=1; i<=N; i++)
   {
     InsertNode(i, head);
     ShowNode(head);
     Sleep(1000);
   }
-  printf("删除结点...\n");
+  printf("删除测试...\n");
   for (i=1; i<=N; i++)
   {
     DeleteNode(head);
