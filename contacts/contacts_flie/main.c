@@ -15,6 +15,7 @@ void menu()
 int main()
 {
   int input = 0;
+  
   Contact con;
   InitContact(&con);
   do

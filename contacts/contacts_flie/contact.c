@@ -7,11 +7,13 @@ void InitContact(Contact *ps)
   // 妙
 
   ps->date = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
+
   if (ps->date == NULL)
   {
     //printf("%s\n", strerror(errno));
     perror("InitContact()");
-  }// end "if(ps->date == NULL)"
+  } // end of if
+
   memset(ps->date, 0, sizeof(PeoInfo)*DEFAULT_SZ); // 全部初始化为0
   ps->capacity = DEFAULT_SZ;
   ps->size = 0;
@@ -25,18 +27,19 @@ static void CheckCapacity(Contact *ps);
 void LoadContact(Contact *ps)
 {
   PeoInfo tmp = {0};
+
   FILE *pfRead = fopen("Contact.dat", "rb");
   if (pfRead == NULL)
   {
     printf("LoadContact::%s\n", strerror(errno));
-  }
+  } // end of if
   // 读取文件，放到通讯录中
   while (fread(&tmp,sizeof(PeoInfo), 1, pfRead)) // fread return the number of full items actually read
   {
     CheckCapacity(ps);
     ps->date[ps->size] = tmp;
     ps->size++;
-  }
+  } //end of while
   fclose(pfRead);
   pfRead == NULL;
 }
@@ -57,8 +60,8 @@ static void CheckCapacity(Contact *ps)
     else
     {
       printf("增容失败!\n");
-    }// end "if (ptr != NULL)"
-  }// end "if(ps->size == ps->capacity)"
+    }
+  }// end of if
 }
 
 void AddContact(Contact *ps)
@@ -102,8 +105,8 @@ void ShowContact(const Contact *ps)
         ps->date[i].age,
         ps->date[i].tele,
         ps->date[i].addr);
-    }// end "for(i=0; i<ps->size; i++)"
-  }// end "if(ps->size == 0)"
+    } //end of for
+  } //end of if-else
 }
 
 static int FindByName(const Contact *ps, const char name[MAX_NAME])
@@ -113,6 +116,7 @@ static int FindByName(const Contact *ps, const char name[MAX_NAME])
   找不到返回-1
   */
   int i = 0;
+
   for (i=0; i<ps->size; i++)
   {
     if (0 == (strcmp(ps->date[i].name, name)))
@@ -225,6 +229,7 @@ void DestroyContact(Contact *ps)
 void SaveContact(const Contact *ps)
 {
   int i = 0;
+  
   FILE *pfWrite = fopen("Contact.dat", "wb");
   if (pfWrite == NULL)
   {
