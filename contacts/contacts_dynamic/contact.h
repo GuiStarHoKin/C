@@ -43,3 +43,4 @@ void ShowContact(const Contact *ps);
 void DelContact(Contact *ps);
 void SearchContact(const Contact *ps);
 void ModifyContact(Contact *ps);
+extern void SortContact(Contact *ps);

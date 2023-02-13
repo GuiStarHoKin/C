@@ -44,6 +44,7 @@ int main()
         ShowContact(&con);
         break;
       case SORT:
+        SortContact(&con);
         break;
       case EXIT:
         // 销毁通讯录-释放动态开辟的内存

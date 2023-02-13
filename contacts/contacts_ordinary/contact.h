@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <memory.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX 1000
 #define MAX_NAME 20
@@ -54,3 +56,6 @@ void SearchContact(const struct Contact *ps);
 
 //修改指定联系人
 void ModifyContact(struct Contact *ps);
+
+
+extern void SortContact(struct Contact *ps);

@@ -163,3 +163,32 @@ void ModifyContact(struct Contact *ps)
     }
   }
 }
+
+static int SortByName(const void *e1, const void *e2)
+{
+  return strcmp(((struct PeoInfo*)e1)->name, ((struct PeoInfo*)e2)->name);
+}
+
+void BubbleSort()
+{
+
+}
+
+void SortContact(struct Contact *ps)
+{
+  if (NULL == ps)
+  {
+    perror("SortContact()");
+    return;
+  }
+  else if (ps->size == 0)
+  {
+    printf("通讯录为空,无法排序!\n");
+  }
+  else
+  {
+    qsort(ps->data, ps->size, sizeof(struct PeoInfo), SortByName);
+    printf("排序完成!\n");
+    ShowContact(ps);
+  }
+}

@@ -55,8 +55,7 @@ int main()
           ShowContact(&con);
           break;
       case SORT:
-          //qsort
-          //SortContact(&con);
+          SortContact(&con);
           break;
       case EXIT:
           printf("退出通讯录\n");
