@@ -1,4 +1,6 @@
-#pragma once 
+//#pragma once //warning: #pragma once in main file
+#ifndef __CONTACT_H__
+#define __CONTACT_H__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +13,7 @@
 #define MAX_ADDR 30
 #define DEFAULT_SZ 3
 
+#endif
 enum Option
 {
   EXIT,
@@ -48,3 +51,4 @@ extern void ModifyContact(Contact *ps);
 extern void DestroyContact(Contact *ps);
 extern void SaveContact(const Contact *ps);
 extern void LoadContact(Contact *ps);
+extern void SortContact(Contact *ps);

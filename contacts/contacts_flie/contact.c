@@ -245,3 +245,28 @@ void SaveContact(const Contact *ps)
   fclose(pfWrite);
   pfWrite = NULL;
 }
+
+int SortByName(const void *e1, const void *e2)
+{
+  return strcmp(((PeoInfo*)e1)->name, ((PeoInfo*)e2)->name);
+}
+
+void SortContact(Contact *ps)
+{
+  if (NULL == ps)
+  {
+    perror("SortContact()\n");
+  }
+  else if (ps->size == 0)
+  {
+    printf("通讯录为空,无法修改!\n");
+  }
+  else
+  {
+    qsort(ps->date, ps->size, sizeof(PeoInfo), SortByName);
+
+    printf("排序成功!\n");
+    ShowContact(ps);
+  }
+
+}

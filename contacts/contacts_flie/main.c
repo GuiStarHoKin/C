@@ -41,6 +41,7 @@ int main()
         ShowContact(&con);
         break;
       case SORT:
+        SortContact(&con);
         break;
       case SAVE:
         SaveContact(&con);
