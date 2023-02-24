@@ -1,6 +1,6 @@
 #include "SList.h"
 
-SLTNode* SLTNodeAlloc(int x)
+SLTNode* SLTNodeAlloc(SLTDataType x)
 {
   SLTNode *node = (SLTNode*)malloc(sizeof(SLTNode));
   if (NULL == node)
@@ -14,7 +14,7 @@ SLTNode* SLTNodeAlloc(int x)
   return node;
 }
 
-void SLTNodeInsert(SLTNode *phead, int x)
+void SLTNodeInsert(SLTNode *phead, SLTDataType x)
 {
   if (NULL == phead)
   {

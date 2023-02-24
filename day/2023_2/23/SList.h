@@ -14,8 +14,8 @@ typedef struct SLTNode
   struct SLTNode *next;
 }SLTNode;
 
-extern SLTNode* SLTNodeAlloc(int x);
-extern void SLTNodeInsert(SLTNode *phead, int x);
+extern SLTNode* SLTNodeAlloc(SLTDataType x);
+extern void SLTNodeInsert(SLTNode *phead, SLTDataType x);
 extern void ShowNode(SLTNode *phead);
 extern void SLTNodeDelete(SLTNode *phead);
 

@@ -3,7 +3,7 @@
 static void TestNode(void)
 {
   SLTNode *phead = SLTNodeAlloc(0);
-  int i = 0;
+  SLTDataType i = 0;
   printf("开始插入...\n");
   for (i=1; i<=N; i++)
   {
