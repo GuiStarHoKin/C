@@ -14,6 +14,7 @@ void TestSList(void)
   printf("开始尾删...\n");
   for (i=1; i<=N; i++)
   {
+    
     SLPopBack(&plist);
     SLPrint(phead);
     Sleep(500);
