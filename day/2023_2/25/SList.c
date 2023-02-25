@@ -72,4 +72,76 @@ void SLDestory(SL **phead)
   (*phead) = NULL;
 }
 
-void 
+void SLPopBack(SL **phead)
+{
+/*   if (NULL == *phead)
+  {
+    return;
+  }
+  else if (NULL == (*phead)->next)
+  {
+    free(*phead);
+    (*phead) = NULL;
+  }
+  else
+  {
+    SL *tail = *phead;
+    SL *prev = NULL;
+    while (NULL != tail->next)
+    {
+      prev = tail;
+      tail = tail->next;
+    }
+    free(tail);
+    tail = NULL;
+    prev->next = NULL;
+  } */
+
+    if (NULL == (*phead)->next)
+    {
+        free(*phead);
+        *phead = NULL;
+    }
+    else
+    {
+        SL *tail = *phead;
+        while (NULL != tail->next->next)
+        {
+            tail = tail->next;
+        }
+        free(tail->next);
+        tail->next = NULL;
+    }
+}
+
+void SLPopFront(SL **phead)
+{
+    if (NULL == *phead)
+    {
+        return;
+    }
+    else
+    {
+        SL *next = (*phead)->next;
+        free(*phead);
+        *phead = next;
+    }
+}
+
+SL* SLFind(SL *phead, SLDataType x)
+{
+    SL *cur = phead;
+    while (NULL != cur)
+    {
+        if (cur->data == x)
+        {
+            return cur;
+        }
+        else
+        {
+            cur = cur->next;
+        }
+    }
+    
+    return NULL;
+}

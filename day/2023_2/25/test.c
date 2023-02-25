@@ -11,15 +11,16 @@ void TestSList(void)
     SLPrint(phead);
     Sleep(500);
   }
-  printf("开始尾删...\n");
+  SL *pos = SLFind(phead, 5);
+  printf("%d", pos->data);
+
+  /* printf("开始尾删...\n");
   for (i=1; i<=N; i++)
   {
-    
-    SLPopBack(&plist);
+    SLPopBack(&phead);
     SLPrint(phead);
     Sleep(500);
   }
-  SLDestory(&phead);
   printf("开始头插...\n");
   for (i=1; i<=N; i++)
   {
@@ -27,6 +28,13 @@ void TestSList(void)
     SLPrint(phead);
     Sleep(500);
   }
+  printf("开始头删...\n");
+  for (i=0; i<=N; i++)
+  {
+    SLPopFront(&phead);
+    SLPrint(phead);
+    Sleep(500);
+  } */
 
 
 }
