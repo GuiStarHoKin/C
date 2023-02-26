@@ -145,3 +145,53 @@ SL* SLFind(SL *phead, SLDataType x)
     
     return NULL;
 }
+
+void SLInsert(SL **pphead, SL *pos, SLDataType x)
+{
+  SL *newnode = CreatListNode(x);
+  if (*pphead == pos)
+  {
+    // 头插
+    newnode->next = (*pphead);
+    (*pphead) = newnode;
+  }
+  else
+  {
+    SL *pos_prev = *pphead;
+    while (pos_prev->next != pos)
+    {
+      pos_prev = pos_prev->next;
+    }
+    newnode->next = pos;
+    pos_prev->next = newnode;
+  }
+}
+
+void SLInsertAfter(SL *pos, SLDataType x)
+{
+    SL *newnode = CreatListNode(x);
+    SL *pos_after = pos->next;
+    newnode->next = pos_after;
+    pos->next = newnode;
+
+}
+
+void SLErase(SL **pphead, SL *pos)
+{
+    if ((*pphead) == pos)
+    {
+        free(*pphead);
+        (*pphead) = NULL;
+    }
+    else
+    {
+        SL *pos_prev = *pphead;
+        while (pos_prev->next != pos)
+        {
+            pos_prev = pos_prev->next;
+        }
+        pos_prev->next = pos->next;
+        free(pos);
+        pos = NULL;
+    }
+}

@@ -12,7 +12,13 @@ void TestSList(void)
     Sleep(500);
   }
   SL *pos = SLFind(phead, 5);
-  printf("%d", pos->data);
+  SLInsert(&phead, pos, 50);
+  SLPrint(phead);
+  SLInsertAfter(pos, 60);
+  SLPrint(phead);
+  SLErase(&phead, pos);
+  SLPrint(phead);
+  SLDestory(&phead);
 
   /* printf("开始尾删...\n");
   for (i=1; i<=N; i++)
