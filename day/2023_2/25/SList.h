@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #define N 10
 
@@ -26,4 +27,5 @@ extern void SLInsert(SL **pphead, SL *pos, SLDataType x);
 extern void SLInsertAfter(SL *pos, SLDataType x);
 extern void SLErase(SL **pphead, SL *pos);
 extern void SLDestory(SL **phead);
+extern void SLEraseAfter(SL *pos);
 #endif

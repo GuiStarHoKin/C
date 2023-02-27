@@ -19,6 +19,9 @@ void TestSList(void)
   SLPrint(phead);
   SLErase(&phead, pos);
   SLPrint(phead);
+  pos = SLFind(phead, 7);
+  SLEraseAfter(pos);
+  SLPrint(phead);
   SLDestory(&phead);
 
   /* printf("开始尾删...\n");

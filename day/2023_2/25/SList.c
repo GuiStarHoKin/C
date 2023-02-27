@@ -16,6 +16,8 @@ SL* CreatListNode(SLDataType x)
 
 void SLPushBack(SL **phead, SLDataType x)
 {
+  assert(NULL != phead);//&phead绝不会为空，phead的值可以为空，避免传参数传成了值传递
+
   SL *newnode = CreatListNode(x);
 
   if (NULL == *phead)
@@ -54,6 +56,8 @@ void SLPrint(SL *phead)
 
 void SLPushFront(SL **phead, SLDataType x)
 {
+  assert(NULL != phead);
+
   SL *newnode = CreatListNode(x);
   if (NULL == *phead)
   {
@@ -68,8 +72,22 @@ void SLPushFront(SL **phead, SLDataType x)
 
 void SLDestory(SL **phead)
 {
-  free(*phead);
-  (*phead) = NULL;
+  // 链表和顺序表不一样，链表的每个元素都是malloc出来的，所以也要free掉每个元素
+  /* free(*phead);
+  (*phead) = NULL; */
+
+  assert(phead != NULL);
+
+  SL *cur = *phead;
+  while (NULL != cur)
+  {
+    SL *need_free = cur;
+    cur = cur->next;
+    free(need_free);
+    need_free = NULL;
+  }
+  *phead = NULL;
+
 }
 
 void SLPopBack(SL **phead)
@@ -180,8 +198,9 @@ void SLErase(SL **pphead, SL *pos)
 {
     if ((*pphead) == pos)
     {
-        free(*pphead);
-        (*pphead) = NULL;
+        *pphead = pos->next;
+        free(pos);
+        (pos) = NULL;
     }
     else
     {
@@ -194,4 +213,23 @@ void SLErase(SL **pphead, SL *pos)
         free(pos);
         pos = NULL;
     }
+}
+
+void SLEraseAfter(SL *pos)
+{
+  if (pos == NULL)
+  {
+    return;
+  }
+  else if (pos->next != NULL)
+  {
+    SL *pos_after = pos->next;
+    pos->next = pos_after->next;
+    free(pos_after);
+    pos_after = NULL;
+  }
+  else if (pos->next == NULL)
+  {
+    return;
+  }
 }
