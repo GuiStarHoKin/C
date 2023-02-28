@@ -81,6 +81,7 @@ void SLDestory(SL **phead)
   SL *cur = *phead;
   while (NULL != cur)
   {
+    
     SL *need_free = cur;
     cur = cur->next;
     free(need_free);
