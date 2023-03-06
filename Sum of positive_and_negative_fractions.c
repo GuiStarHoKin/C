@@ -3,7 +3,7 @@
 
 int main()
 {
-    float sum;
+    float sum = 0;
     float i;
     int flag = 1;
     for(i = 1.0;i <= 100.0;i++)
