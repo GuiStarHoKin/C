@@ -16,6 +16,7 @@ double Pow(float n,float k)
     {
         return 1.0;
     }
+    return -1.0;
 }
 
 int main()

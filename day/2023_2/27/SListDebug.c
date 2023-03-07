@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <windows.h>
+//#include <windows.h>
+#include <stdlib.h>
 
 struct ListNode {
     int val;
@@ -50,7 +51,6 @@ int main()
     struct ListNode *n2 = (struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode *n3 = (struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode *n4 = (struct ListNode*)malloc(sizeof(struct ListNode));
-
     n1->val = 7;
     n2->val = 7;
     n3->val = 7;
@@ -62,6 +62,6 @@ int main()
     n4->next = NULL;
 
     removeElements(n1, 7);
-    system("pause");
+    //system("pause");
     return 0;
 }

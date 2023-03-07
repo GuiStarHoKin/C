@@ -51,9 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# VSCode
-.vscode/
-
 # bin
 bin/
 
